@@ -12,3 +12,6 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
+var textInput = document.querySelector(".col-11")
+var time = document.querySelector(".col-1")
+textInput.after(time)
