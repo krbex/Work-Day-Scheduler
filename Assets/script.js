@@ -14,4 +14,20 @@
 
 var textInput = document.querySelector(".col-10")
 var time = document.querySelector(".col-1")
-textInput.after(time)
+
+var currentDate = moment().format("dddd, Do MMMM");
+$("#currentDay").text(currentDate);
+
+var currentHour = moment().format("HHmm");
+$('.colorcode').each(function(){
+    var val = parseInt($(this).prop('id'));
+    if(val > currentHour && val < currentHour+6){
+        $(this).addClass('future');
+    }else if(val < currentHour && val > currentHour-6){
+        $(this).addClass('past');
+    }else if(val === currentHour){
+        $(this).addClass('present');
+    }else{
+        $(this).css('background-color','White');
+    }
+});
