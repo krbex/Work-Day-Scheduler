@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/style.css" />
   <title>Work Day Scheduler</title>
 </head>
-
+ 
 <body>
   <header class="jumbotron">
     <h1 class="display-3">Work Day Scheduler</h1>
@@ -20,132 +20,59 @@
     <p id="currentDay" class="lead"></p>
   </header>
 
-  <container class="column">
-    <section class="container w-100 d-flex justify-content-center md-0 p-0">
-      <div class="input-group-lg input-group form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>0900</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
+  <container>
+    <div class="row" id="09">
+      <h3 class="col-2 hour time-block">9AM</h3>
+      <textarea id="hour0" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
 
-    <section class="container w-100 d-flex justify-content-center">
-      <div class="input-group-lg input-group form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>1000</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
+    <div class="row" id="10">
+      <h3 class="col-2 hour time-block">10AM</h3>
+      <textarea id="hour1" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
 
-    <section class="container w-100 d-flex justify-content-center">
-      <div class="input-group-lg input-group mb-3 form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>1100</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
+    <div class="row" id="11">
+      <h3 class="col-2 hour time-block">11AM</h3>
+      <textarea id="hour2" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
+    <div class="row" id="12">
+      <h3 class="col-2 hour time-block">12PM</h3>
+      <textarea id="hour3" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
 
-    <section class="container w-100 d-flex justify-content-center">
-      <div class="input-group-lg input-group mb-3 form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>1200</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
+    <div class="row" id="13">
+      <h3 class="col-2 hour time-block">1PM</h3>
+      <textarea id="hour4" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
 
-    <section class="container w-100 d-flex justify-content-center">
-      <div class="input-group-lg input-group mb-3 form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>1300</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
+    <div class="row" id="14">
+      <h3 class="col-2 hour time-block">2PM</h3>
+      <textarea id="hour5" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
 
-    <section class="container w-100 d-flex justify-content-center">
-      <div class="input-group-lg input-group mb-3 form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>1400</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
+    <div class="row" id="15">
+      <h3 class="col-2 hour time-block">3PM</h3>
+      <textarea id="hour6" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
 
-    <section class="container w-100 d-flex justify-content-center">
-      <div class="input-group-lg input-group mb-3 form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>1500</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
+    <div class="row" id="16">
+      <h3 class="col-2 hour time-block">4PM</h3>
+      <textarea id="hour7" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
 
-    <section class="container w-100 d-flex justify-content-center">
-      <div class="input-group-lg input-group mb-3 form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>1600</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="container w-100 d-flex justify-content-center">
-      <div class="input-group-lg input-group mb-3 form-control" rows="4" style="height: 80px;">
-        <div class="input-group-prepend">
-          <div class="hour col-1">
-            <p>1700</p>
-          </div>
-        </div>
-        <div class="custom-hour input-group-append col-10">
-          <input type="text" class="form-control">
-          <button class="saveBtn col-1"></button>
-        </div>
-      </div>
-    </section>
+    <div class="row" id="17">
+      <h3 class="col-2 hour time-block">5PM</h3>
+      <textarea id="hour8" class="form-control bg-transparent col-9 "></textarea>
+      <button class="col-1 saveBtn" onclick="saveUserData()"><a class="fas fa-save"></a></button>
+    </div>
   </container>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

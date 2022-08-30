@@ -12,22 +12,34 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
-var textInput = document.querySelector(".col-10")
-var time = document.querySelector(".col-1")
-
 var currentDate = moment().format("dddd, Do MMMM");
 $("#currentDay").text(currentDate);
+// Sets the current date
 
-var currentHour = moment().format("HHmm");
-$('.colorcode').each(function(){
-    var val = parseInt($(this).prop('id'));
-    if(val > currentHour && val < currentHour+6){
-        $(this).addClass('future');
-    }else if(val < currentHour && val > currentHour-6){
-        $(this).addClass('past');
-    }else if(val === currentHour){
-        $(this).addClass('present');
-    }else{
-        $(this).css('background-color','White');
-    }
-});
+var currentHour = moment().format('H')
+// var currentHour = '14'
+// Above is a test variable to check for functionality
+
+var rowHour;
+var rows = document.getElementsByClassName("row")
+rowsArray = Array.from(rows)
+rowsArray.forEach(row => {
+    rowHour = row.id;
+        if (currentHour > rowHour) { 
+            pastClass = document.getElementById(rowHour)
+            pastClass.classList.add("past")
+		} 
+        if (currentHour === rowHour) { 
+            currentClass = document.getElementById(rowHour)
+            currentClass.classList.add("present")
+		} 
+        if (currentHour < rowHour) { 
+			futureClass = document.getElementById(rowHour)
+            futureClass.classList.add("future")
+        }
+})
+// This makes each row within the rows variable (row tag in html) into an array and checks for their id against the current hour and applies classes based on the time.
+
+function saveUserData() {
+
+}
