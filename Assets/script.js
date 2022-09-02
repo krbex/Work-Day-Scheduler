@@ -1,17 +1,3 @@
-// GIVEN I am using a daily planner to create a schedule
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
-// WHEN I scroll down
-// THEN I am presented with timeblocks for standard business hours
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-// WHEN I click into a timeblock
-// THEN I can enter an event
-// WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
-// WHEN I refresh the page
-// THEN the saved events persist
-
 var currentDate = moment().format("dddd, Do MMMM");
 $("#currentDay").text(currentDate);
 // Sets the current date
@@ -40,6 +26,34 @@ rowsArray.forEach(row => {
 })
 // This makes each row within the rows variable (row tag in html) into an array and checks for their id against the current hour and applies classes based on the time.
 
-function saveUserData() {
+const saveBtn = document.querySelectorAll('button') 
+// targets all button elements
+const textAreaText = document.querySelectorAll('textarea') 
+// targets all textarea elements
 
+for (var i = 0; i < saveBtn.length; i++) { 
+	// when a saveBtn is clicked,
+	saveBtn[i].addEventListener("click", function() { 
+		
+		var hourId = 'hour' + i
+		// save taskText
+		var hourText = document.getElementById(hourId).value
+		// save data in localStorage
+		localStorage.setItem('hourText' + i, hourText)
+		
+	})
+	
 }
+
+function loadBlocks() { 
+	// for loop to input hours in correct time slots on page load/refresh - from localStorage
+	for (var i = 0; i < textAreaText.length; i++) { 
+    // on page load, not on button click
+
+		var hourText = localStorage.getItem('hourText' + i)
+
+		document.getElementById("hour" + i).value = hourText;
+	}
+}
+
+loadBlocks();
